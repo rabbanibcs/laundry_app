@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>login</title>
+</head>
+<body>
+    <h3><a href="{% url 'home' %}">Home</a></h3>
+
+    {% if messages %}
+        {% for message in messages %}
+        <p><strong>{{message}}</strong></p>
+        {% endfor %}
+    {% endif%}
+
+<form id="login_form" action="" method="post">
+    {% csrf_token%}
+    {{form.as_p}}
+    <input value="Login" type="submit"> <a href="{% url 'password_reset' %}">Forgot password?</a>
+</form>
+    <br><br>
+ <a href="{% url 'registration' %}">Sign Up</a>
+</body>
+</html>
+
+
+

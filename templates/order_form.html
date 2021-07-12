@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div style="margin-left:10%;">
+     <h3><a href="{% url 'home' %}">Home</a></h3>
+    <h3>Place Order</h3>
+    <form id="order_form" action="" method="POST">
+    {% csrf_token%}
+    {{form.as_p}}
+    <input value="Place order" type="submit">>
+    </form>
+
+</div>
+
+
+</body>
+</html>
